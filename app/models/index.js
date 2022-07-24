@@ -1,20 +1,23 @@
 const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("ghdb_2022", "lighto", "Oussema1", {
-  host: 'goldenhour.database.windows.net',
+const sequelize = new Sequelize("db_a8a8c9_gh", "db_a8a8c9_gh_admin", "Oussema1", {
+  host: 'SQL5053.site4now.net',
   dialect: 'mssql',
   driver: 'tedious',
   options: {
     encrypt: true,
-    database: 'ghdb_2022'
+    database: 'db_a8a8c9_gh'
   },
   pool: {
     max: 5,
     min: 0,
+    acquire : 30000,
     idle: 10000
   },
-  port: 1433
+
+  port: /*3006*/ 1433
+  
 });
 
 const db = {};
